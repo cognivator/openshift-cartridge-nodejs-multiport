@@ -1,5 +1,5 @@
 ---
-Name: nodejs
+Name: multiport nodejs
 Cartridge-Short-Name: NODEJS
 Display-Name: Node.js 0.10
 Description: Node.js is a platform built on Chrome's JavaScript runtime for easily
@@ -23,7 +23,7 @@ Compatible-Versions:
 - 0.0.21
 - 0.0.22
 - 0.0.23
-Cartridge-Vendor: redhat
+Cartridge-Vendor: cognivator
 Categories:
 - service
 - javascript
