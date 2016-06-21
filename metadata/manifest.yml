@@ -1,0 +1,151 @@
+---
+Name: nodejs
+Cartridge-Short-Name: NODEJS
+Display-Name: Node.js 0.10
+Description: Node.js is a platform built on Chrome's JavaScript runtime for easily
+  building fast, scalable network applications. Node.js is perfect for data-intensive
+  real-time applications that run across distributed devices.
+Version: '0.10'
+Versions:
+- '0.10'
+- '0.6'
+License: MIT License
+License-Url: https://raw.github.com/joyent/node/v0.10/LICENSE
+Vendor: www.nodejs.org
+Website: http://www.nodejs.org/
+Cartridge-Version: 0.0.24
+Compatible-Versions:
+- 0.0.15
+- 0.0.16
+- 0.0.17
+- 0.0.19
+- 0.0.20
+- 0.0.21
+- 0.0.22
+- 0.0.23
+Cartridge-Vendor: redhat
+Categories:
+- service
+- javascript
+- nodejs
+- web_framework
+Help-Topics:
+  Developer Center: https://www.openshift.com/developers
+Provides:
+- nodejs-0.10
+- nodejs
+Scaling:
+  Min: 1
+  Max: -1
+Publishes:
+  get-doc-root:
+    Type: FILESYSTEM:doc-root
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+  set-mysql-connection-info:
+    Type: NET_TCP:db:mysql
+    Required: false
+  set-postgres-connection-info:
+    Type: NET_TCP:db:postgres
+    Required: false
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols:
+  - http
+  - ws
+  Options:
+    primary: true
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: true
+  - Frontend: /health
+    Backend: ''
+    Options:
+      health: true
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_00
+  Private-Port: 3000
+  Public-Port-Name: PROXY_PORT_00
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_01
+  Private-Port: 3001
+  Public-Port-Name: PROXY_PORT_01
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_02
+  Private-Port: 3002
+  Public-Port-Name: PROXY_PORT_02
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_03
+  Private-Port: 3003
+  Public-Port-Name: PROXY_PORT_03
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_04
+  Private-Port: 3004
+  Public-Port-Name: PROXY_PORT_04
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_05
+  Private-Port: 3005
+  Public-Port-Name: PROXY_PORT_05
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_06
+  Private-Port: 3006
+  Public-Port-Name: PROXY_PORT_06
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_07
+  Private-Port: 3007
+  Public-Port-Name: PROXY_PORT_07
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_08
+  Private-Port: 3008
+  Public-Port-Name: PROXY_PORT_08
+  Protocols:
+  - http
+  - ws
+- Private-IP-Name: IP
+  Private-Port-Name: SERVICE_PORT_09
+  Private-Port: 3009
+  Public-Port-Name: PROXY_PORT_09
+  Protocols:
+  - http
+  - ws
+Install-Build-Required: false
+Version-Overrides:
+  '0.6':
+    Display-Name: Node.js 0.6
+    Obsolete: true
+    Provides:
+    - nodejs-0.6
+    - nodejs
+    License-Url: https://raw.github.com/joyent/node/v0.6/LICENSE
+    Install-Build-Required: false
