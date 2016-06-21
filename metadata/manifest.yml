@@ -1,5 +1,5 @@
 ---
-Name: multiport-nodejs
+Name: nodejs
 Cartridge-Short-Name: NODEJS
 Display-Name: Node.js 0.10
 Description: Node.js is a platform built on Chrome's JavaScript runtime for easily
