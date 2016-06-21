@@ -1,11 +1,19 @@
 #!/bin/bash -e
 
+echo "starting setup"
+echo "first arg: ${1}"
+echo "second arg: ${2}"
+
+
 case "$1" in
   -v|--version)
     version="$2"
 esac
 
 # Parse arguments
+echo "parsing arguments"
+echo "OPENSHIFT_NODEJS_DIR: ${OPENSHIFT_NODEJS_DIR}"
+
 source "${OPENSHIFT_NODEJS_DIR}/lib/util"
 parse_args $@
 
@@ -13,6 +21,8 @@ parse_args $@
 set -u
 
 # Copy the version specific files to nodejs directory
+echo "copying version files"
+
 shopt -s dotglob
 for dir in configuration etc; do
     mkdir -p $OPENSHIFT_NODEJS_DIR/$dir
